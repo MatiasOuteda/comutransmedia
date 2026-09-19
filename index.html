@@ -26,7 +26,11 @@
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   body{
-    background:var(--bg);
+    background-color:var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='%238A5C3B' fill-opacity='0.065'%3E%3Cg transform='translate(40,50) rotate(-25) scale(0.9)'%3E%3Cellipse cx='0' cy='18' rx='14' ry='11'/%3E%3Cellipse cx='-14' cy='-2' rx='6' ry='8'/%3E%3Cellipse cx='-4' cy='-11' rx='6' ry='8'/%3E%3Cellipse cx='8' cy='-10' rx='6' ry='8'/%3E%3Cellipse cx='17' cy='-2' rx='6' ry='8'/%3E%3C/g%3E%3Cg transform='translate(150,125) rotate(18) scale(1.1)'%3E%3Cellipse cx='0' cy='18' rx='14' ry='11'/%3E%3Cellipse cx='-14' cy='-2' rx='6' ry='8'/%3E%3Cellipse cx='-4' cy='-11' rx='6' ry='8'/%3E%3Cellipse cx='8' cy='-10' rx='6' ry='8'/%3E%3Cellipse cx='17' cy='-2' rx='6' ry='8'/%3E%3C/g%3E%3Cg transform='translate(105,185) rotate(-58) scale(0.65)'%3E%3Cellipse cx='0' cy='18' rx='14' ry='11'/%3E%3Cellipse cx='-14' cy='-2' rx='6' ry='8'/%3E%3Cellipse cx='-4' cy='-11' rx='6' ry='8'/%3E%3Cellipse cx='8' cy='-10' rx='6' ry='8'/%3E%3Cellipse cx='17' cy='-2' rx='6' ry='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 200px 200px;
     color:var(--ink);
     font-family:'Inter', sans-serif;
     font-size:16px;
@@ -73,17 +77,21 @@
 
   #dashboard{ max-width:1180px; margin:0 auto; padding:3.5rem 1.75rem 5rem; }
 
-  header.hero{ margin-bottom:2.75rem; }
+  header.hero{ margin-bottom:2.75rem; text-align:center; display:flex; flex-direction:column; align-items:center; }
   .kicker{ color:var(--rose); font-weight:600; font-size:0.95rem; margin-bottom:0.6rem; }
   h1.title{
     font-size:clamp(2rem, 4.4vw, 3.1rem);
     line-height:1.12;
     max-width:16.5em;
     letter-spacing:-0.01em;
+    margin-left:auto;
+    margin-right:auto;
   }
   h1.title em{ font-style:italic; color:var(--rose); }
   .bajada{
     margin-top:1.1rem;
+    margin-left:auto;
+    margin-right:auto;
     max-width:48em;
     font-size:1.15rem;
     color:var(--ink-soft);
@@ -91,11 +99,13 @@
 
   /* ---------- Índice / introducción estructural ---------- */
   .intro-index{
+    width:100%;
     margin-top:2.2rem;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
     gap:1.1rem;
     max-width:64em;
+    text-align:left;
   }
   .intro-item{
     background:var(--panel);
@@ -125,6 +135,8 @@
 
   /* ---------- Pelotas y Hueso Metodológico ---------- */
   .methodology-wrapper {
+    width: 100%;
+    text-align: left;
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -228,11 +240,11 @@
   section.block{ margin-top:3.4rem; }
   .block h2{ font-size:1.5rem; max-width:32em; }
   .block .q{ color:var(--rose); font-weight:500; font-family:'Inter',sans-serif; font-size:1rem; margin-bottom:0.5rem; display:block; }
-  .block p.insight{ margin-top:0.9rem; max-width:64ch; color:var(--ink-soft); font-size:1rem; }
+  .block p.insight{ margin-top:0.9rem; max-width:100%; color:var(--ink-soft); font-size:1rem; }
   .block p.insight strong{ color:var(--ink); font-weight:600; }
   .block p.method-note{
     margin-top:0.9rem;
-    max-width:66ch;
+    max-width:100%;
     color:var(--ink-soft);
     font-size:0.95rem;
     background:#F4F5F0;
@@ -249,6 +261,19 @@
     gap:1.25rem;
   }
   .chart-grid.single{ grid-template-columns:1fr; }
+
+  .lexico-legend{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    margin-top:0.9rem;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+  .lexico-legend span{ display:inline-flex; align-items:center; gap:0.5rem; }
+  .lexico-legend .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; }
+  .lexico-legend .dot.filial{ background:var(--rose); }
+  .lexico-legend .dot.especie{ background:var(--teal); }
   .panel{
     background:var(--panel);
     border:1px solid var(--line);
@@ -302,46 +327,8 @@
   .highlight-card .big-num { font-family: 'Fraunces', serif; font-size: 6rem; color: #7A3542; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
   .highlight-card .big-txt { font-size: 1.25rem; color: #7A3542; font-weight: 600; margin-top: 0.5rem; line-height: 1.2; }
   .highlight-card .big-sub { font-size: 1rem; margin-top: 1.5rem; color: #7A3542; opacity: 0.85; line-height: 1.4; }
-
-  /* ---------- Ejemplos textuales (comentarios filtrados) ---------- */
-  .quote-examples{
-    margin-top:1.8rem;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:1rem;
-  }
-  .quote-card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:1.1rem 1.25rem;
-    position:relative;
-  }
-  .quote-card::before{
-    content:'“';
-    font-family:'Fraunces', serif;
-    font-size:2.4rem;
-    color:var(--rose-soft);
-    position:absolute;
-    top:0.1rem;
-    left:0.6rem;
-    line-height:1;
-  }
-  .quote-card p.qtext{
-    margin:0.6rem 0 0.8rem;
-    padding-left:0.6rem;
-    font-size:0.95rem;
-    color:var(--ink);
-    font-style:italic;
-    line-height:1.45;
-  }
-  .quote-card .qmeta{
-    padding-left:0.6rem;
-    font-size:0.78rem;
-    color:var(--ink-soft);
-    display:flex;
-    justify-content:space-between;
-  }
+  .highlight-card.compact{ padding: 2rem 1.5rem; }
+  .highlight-card.compact .big-num{ font-size: 4.2rem; }
 
   .compare-grid{
     margin-top:1.4rem;
@@ -368,7 +355,10 @@
     text-align: center;
     margin: 5rem auto 2rem;
     padding: 3rem 2rem;
-    background: #F4F5F0;
+    background-color: #F4F5F0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%238A5C3B' fill-opacity='0.12'%3E%3Cg transform='translate(35,40) rotate(-20)'%3E%3Cellipse cx='0' cy='16' rx='12' ry='9.5'/%3E%3Cellipse cx='-12' cy='-2' rx='5' ry='7'/%3E%3Cellipse cx='-3' cy='-9' rx='5' ry='7'/%3E%3Cellipse cx='7' cy='-8' rx='5' ry='7'/%3E%3Cellipse cx='14' cy='-2' rx='5' ry='7'/%3E%3C/g%3E%3Cg transform='translate(100,95) rotate(22) scale(0.85)'%3E%3Cellipse cx='0' cy='16' rx='12' ry='9.5'/%3E%3Cellipse cx='-12' cy='-2' rx='5' ry='7'/%3E%3Cellipse cx='-3' cy='-9' rx='5' ry='7'/%3E%3Cellipse cx='7' cy='-8' rx='5' ry='7'/%3E%3Cellipse cx='14' cy='-2' rx='5' ry='7'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 140px 140px;
     border: 1px dashed var(--teal);
     border-radius: var(--radius);
     max-width: 700px;
@@ -410,6 +400,9 @@
     color:var(--ink-soft);
     font-size:0.85rem;
     max-width:64ch;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
   }
 </style>
 </head>
@@ -503,21 +496,50 @@
       <p class="method-note">
         <strong>Cómo se construyó esta muestra:</strong> se hicieron dos scrapings sucesivos con YouTube Data Tools.
         El primero relevó 100 videos con la palabra "mascota" en el título, ordenados por mayor número de visualizaciones,
-        para acotar el universo a los contenidos de mayor alcance. El segundo scrapeó los comentarios de esos mismos videos,
-        conservando el <em>videoId</em> de origen como referencia, el texto de cada comentario, la cantidad de likes y la fecha
-        de publicación para dimensionar mejor la reacción del público. Sobre ese conjunto de comentarios se aplicó luego un
-        filtrado por palabras clave (con la herramienta de búsqueda de Excel) para aislar únicamente aquellos que expresan
-        explícitamente a la mascota en clave de vínculo filial —como hijo, hermano o "bebé" de la familia.
+        para quedarnos con los contenidos de mayor alcance. El segundo recorrió esos mismos videos y extrajo todos sus
+        comentarios, guardando el texto de cada uno junto con la cantidad de likes y la fecha de publicación, para poder
+        dimensionar después la reacción del público. Sobre ese conjunto completo de comentarios se analizó el lenguaje
+        utilizado, buscando patrones que muestren si la audiencia habla de su mascota como si fuera un hijo o un familiar,
+        o si simplemente la nombra por su especie.
       </p>
 
-      <p class="insight">
-        Al analizar cualitativamente ese subconjunto filtrado, se observa un bloque contundente de interacciones que codifican
-        un nivel extremo de afecto. La audiencia utiliza expresiones coloquiales y avanza explícitamente hacia un léxico de
-        asimilación parental. El animal ocupa un lugar de altísima jerarquía emocional, integrado directamente como núcleo familiar.
+      <p class="insight" id="insightLexico"></p>
+
+      <div class="chart-grid single">
+        <div class="panel">
+          <h3>Léxico filial vs. léxico de especie en los comentarios</h3>
+          <div class="sub">Menciones totales de cada término, sobre el universo completo de comentarios scrapeados</div>
+          <div class="lexico-legend">
+            <span><i class="dot filial"></i> Léxico filial (hijo, bebé, familia, hermano...)</span>
+            <span><i class="dot especie"></i> Léxico de especie (perro, gato, cachorro...)</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chartLexico"></canvas></div>
+        </div>
+      </div>
+
+      <p class="insight" id="insightCarino">
+        Al cruzar el léxico anterior con un segundo diccionario de expresiones de cariño (palabras como "amor", "hermoso",
+        "precioso", "consentido" o "tesoro", más emojis afectivos como corazones y caritas enamoradas), se observa un
+        bloque contundente de interacciones que codifican un nivel extremo de afecto hacia la mascota, más cercano al que
+        se usa para hablar de un hijo que de un animal de compañía.
       </p>
-      
-      <div class="quali-layout" id="qualiLayout"></div>
-      <div class="quote-examples" id="quoteExamples"></div>
+
+      <div class="chart-grid">
+        <div class="panel">
+          <h3>Comentarios con expresiones de cariño</h3>
+          <div class="sub">Sobre el total de comentarios scrapeados en los 100 videos</div>
+          <div class="quali-layout" id="carinoHighlight"></div>
+        </div>
+        <div class="panel">
+          <h3>Expresiones de cariño más repetidas</h3>
+          <div class="sub">Palabras y emojis afectivos con mayor frecuencia de aparición</div>
+          <div class="lexico-legend">
+            <span><i class="dot filial"></i> Palabras</span>
+            <span><i class="dot especie"></i> Emojis</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chartCarino"></canvas></div>
+        </div>
+      </div>
       
     </section>
 
@@ -583,8 +605,7 @@ const PUB_BASE_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2kbq08VC
 const GID = {
   encuesta: '1369376445',
   nacimientos: '1691452967',
-  comentarios: '2085427083',
-  comentariosFiltrados: '1158173373'
+  comentarios: '2085427083'
 };
 
 const csvUrl = gid => `${PUB_BASE_URL}?gid=${gid}&single=true&output=csv`;
@@ -623,6 +644,104 @@ function tally(rows, key){
 function sumValues(obj){ return Object.values(obj).reduce((a,b) => a+b, 0); }
 function pct(part, total){ return total ? Math.round((part/total)*100) : 0; }
 
+// Léxico filial: la mascota nombrada como si fuera un vínculo humano/familiar
+const FILIAL_TERMS = ['bebe','bebes','hijo','hija','hijos','hijas','familia','hermano','hermana','hermanos','hermanas','integrante','mama','papa','princesa'];
+// Léxico de especie: la mascota nombrada por su categoría animal
+const ESPECIE_TERMS = ['perro','perra','perros','perras','perrito','perrita','perritos','perritas','gato','gata','gatos','gatas','gatito','gatita','gatitos','gatitas','cachorro','cachorra','cachorros','cachorras'];
+
+function tokenize(text){
+  return stripAccents(text).match(/[a-z]+/g) || [];
+}
+
+function lexiconAnalysis(rows){
+  const counts = {};
+  [...FILIAL_TERMS, ...ESPECIE_TERMS].forEach(t => counts[t] = 0);
+  let totalTextos = 0;
+  let comentariosConFilial = 0;
+  let comentariosConEspecie = 0;
+
+  rows.forEach(r => {
+    const raw = (r.text || '').toString().trim();
+    if(!raw) return;
+    totalTextos++;
+    const tokens = tokenize(raw);
+    let tieneFilial = false, tieneEspecie = false;
+    tokens.forEach(tok => {
+      if(FILIAL_TERMS.includes(tok)){ counts[tok]++; tieneFilial = true; }
+      else if(ESPECIE_TERMS.includes(tok)){ counts[tok]++; tieneEspecie = true; }
+    });
+    if(tieneFilial) comentariosConFilial++;
+    if(tieneEspecie) comentariosConEspecie++;
+  });
+
+  const totalFilialMenciones = FILIAL_TERMS.reduce((a,t) => a + counts[t], 0);
+  const totalEspecieMenciones = ESPECIE_TERMS.reduce((a,t) => a + counts[t], 0);
+
+  const terms = Object.entries(counts)
+    .filter(([, v]) => v > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12);
+
+  return {
+    terms,
+    totalTextos,
+    comentariosConFilial,
+    comentariosConEspecie,
+    totalFilialMenciones,
+    totalEspecieMenciones
+  };
+}
+
+// Léxico de cariño: palabras y emojis que denotan afecto explícito hacia la mascota
+const CARINO_WORDS = ['amor','amo','amas','ama','amado','amada','adoro','adora','adorable','hermoso','hermosa','hermosura','precioso','preciosa','preciosidad','lindo','linda','bello','bella','carino','querido','querida','consentido','consentida','tesoro','divino','divina','encanta','encanto','angel','gordo','gorda','chiquito','chiquita','amorcito','amorcita','ternura','tierno','tierna','bonito','bonita','regalon','regalona','mimoso','mimosa','monada'];
+// Los corazones (de cualquier color o variante) se agrupan en una sola categoría; el resto de los emojis afectivos quedan separados porque representan gestos distintos.
+const CARINO_EMOJI_GROUPS = {
+  '❤️ Corazones': ['❤','♥','💕','💖','💗','💓','💞','💛','💚','💙','💜','🧡'],
+  '😍 Ojos de corazón': ['😍'],
+  '🥰 Carita enamorada': ['🥰'],
+  '😘 Beso': ['😘'],
+  '😻 Gato enamorado': ['😻']
+};
+
+function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+function carinoAnalysis(rows){
+  const wordCounts = {};
+  CARINO_WORDS.forEach(w => wordCounts[w] = 0);
+  const emojiGroupCounts = {};
+  Object.keys(CARINO_EMOJI_GROUPS).forEach(g => emojiGroupCounts[g] = 0);
+
+  let totalTextos = 0;
+  let comentariosConCarino = 0;
+
+  rows.forEach(r => {
+    const raw = (r.text || '').toString().trim();
+    if(!raw) return;
+    totalTextos++;
+    let tieneCarino = false;
+
+    tokenize(raw).forEach(tok => {
+      if(CARINO_WORDS.includes(tok)){ wordCounts[tok]++; tieneCarino = true; }
+    });
+
+    Object.entries(CARINO_EMOJI_GROUPS).forEach(([grupo, variantes]) => {
+      variantes.forEach(e => {
+        const matches = raw.match(new RegExp(escapeRegExp(e), 'g'));
+        if(matches){ emojiGroupCounts[grupo] += matches.length; tieneCarino = true; }
+      });
+    });
+
+    if(tieneCarino) comentariosConCarino++;
+  });
+
+  const combined = [
+    ...Object.entries(wordCounts).map(([label, count]) => ({ label: label.charAt(0).toUpperCase() + label.slice(1), count, type: 'word' })),
+    ...Object.entries(emojiGroupCounts).map(([label, count]) => ({ label, count, type: 'emoji' }))
+  ].filter(x => x.count > 0).sort((a, b) => b.count - a.count).slice(0, 14);
+
+  return { totalTextos, comentariosConCarino, combined };
+}
+
 function baseChartOptions(extra){
   return Object.assign({
     responsive: true,
@@ -640,18 +759,17 @@ async function init(){
   document.getElementById('dashboard').hidden = true;
 
   try{
-    const [encuesta, nacimientos, comentarios, comentariosFiltrados] = await Promise.all([
+    const [encuesta, nacimientos, comentarios] = await Promise.all([
       fetchSheet(GID.encuesta),
       fetchSheet(GID.nacimientos),
-      fetchSheet(GID.comentarios),
-      fetchSheet(GID.comentariosFiltrados)
+      fetchSheet(GID.comentarios)
     ]);
 
     document.getElementById('loading').hidden = true;
     document.getElementById('error').hidden = true;
     document.getElementById('dashboard').hidden = false;
 
-    render(encuesta, nacimientos, comentarios, comentariosFiltrados);
+    render(encuesta, nacimientos, comentarios);
 
   }catch(err){
     console.error(err);
@@ -661,7 +779,7 @@ async function init(){
   }
 }
 
-function render(encuesta, nacimientos, comentarios, comentariosFiltrados){
+function render(encuesta, nacimientos, comentarios){
   const K_TIENE_MASCOTA = '¿Tenés alguna mascota?';
   const K_CREES = '¿Creés que una mascota puede ocupar el lugar emocional de un vínculo humano o familiar?';
   const K_REEMPLAZA = 'En tu caso personal, ¿sentís que tu mascota reemplaza o complementa tus vínculos con otras personas?';
@@ -681,52 +799,96 @@ function render(encuesta, nacimientos, comentarios, comentariosFiltrados){
   const pctComplementa = pct(complementaEntry ? complementaEntry[1] : 0, reemplazaTotal);
 
   const totalComentarios = comentarios.filter(r => (r.text || '').toString().trim().length > 0).length;
-  const filtrados = comentariosFiltrados.filter(r => (r.text || '').toString().trim().length > 0);
-  const totalFiltrados = filtrados.length;
-  const pctFiltrados = pct(totalFiltrados, totalComentarios);
 
-  document.getElementById('qualiLayout').innerHTML = `
-    <div class="highlight-card">
-      <div class="big-num">${pctFiltrados}%</div>
-      <div class="big-txt">de los comentarios analizados</div>
+  const lexico = lexiconAnalysis(comentarios);
+  const pctComentFilial = pct(lexico.comentariosConFilial, lexico.totalTextos);
+  const pctComentEspecie = pct(lexico.comentariosConEspecie, lexico.totalTextos);
+
+  document.getElementById('insightLexico').innerHTML =
+    `Sobre las <strong>${lexico.totalTextos.toLocaleString('es-AR')}</strong> intervenciones scrapeadas,
+    <strong>${lexico.comentariosConEspecie.toLocaleString('es-AR')}</strong> comentarios (<strong>${pctComentEspecie}%</strong>)
+    nombran directamente a la mascota por su especie (perro, gato, cachorro...), algo esperable tratándose de videos sobre
+    animales. Pero <strong>${lexico.comentariosConFilial.toLocaleString('es-AR')}</strong> comentarios (<strong>${pctComentFilial}%</strong>)
+    eligen, en cambio, un vocabulario filial (hijo, bebé, familia, hermano, integrante...) que no describe al animal sino que lo
+    ubica en un rol de parentesco humano. Que miles de personas prefieran esa forma de nombrarlo, en lugar de la más simple y
+    directa, es un indicio de que buena parte de la audiencia algorítmica no usa estos videos solo para hablar de animales, sino
+    también como espacio de consumo afectivo y validación emocional, en un contexto de sustitución o postergación de la
+    paternidad.`;
+
+  new Chart(document.getElementById('chartLexico'), {
+    type: 'bar',
+    data: {
+      labels: lexico.terms.map(([term]) => term.charAt(0).toUpperCase() + term.slice(1)),
+      datasets: [{
+        label: 'Menciones',
+        data: lexico.terms.map(([, count]) => count),
+        backgroundColor: lexico.terms.map(([term]) => FILIAL_TERMS.includes(term) ? '#B85C6B' : '#2C6E68'),
+        borderRadius: 4
+      }]
+    },
+    options: baseChartOptions({
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, ticks: { font:{family:'Inter'}, color:'#55605B' }, grid: { color:'#D8D9D0' } },
+        y: { ticks: { font:{family:'Inter'}, color:'#1D2521' }, grid: { display:false } }
+      }
+    })
+  });
+
+  const carino = carinoAnalysis(comentarios);
+  const pctCarino = pct(carino.comentariosConCarino, carino.totalTextos);
+  const topCarino = carino.combined[0];
+  const topPalabraCarino = carino.combined.find(c => c.type === 'word');
+
+  document.getElementById('carinoHighlight').innerHTML = `
+    <div class="highlight-card compact">
+      <div class="big-num">${pctCarino}%</div>
+      <div class="big-txt">de los comentarios</div>
       <div class="big-sub">
-        Equivale a <strong>${totalFiltrados.toLocaleString('es-AR')}</strong> comentarios que enmarcan explícitamente a la mascota
-        como vínculo filial, sobre un total de <strong>${totalComentarios.toLocaleString('es-AR')}</strong> comentarios relevados
-        en 100 videos de mascotas de YouTube.
+        Equivale a <strong>${carino.comentariosConCarino.toLocaleString('es-AR')}</strong> comentarios (sobre
+        <strong>${carino.totalTextos.toLocaleString('es-AR')}</strong> relevados en 100 videos de mascotas de YouTube) que
+        incluyen al menos una palabra o un emoji de cariño explícito hacia el animal.
       </div>
     </div>
   `;
 
-  // Selección de ejemplos textuales representativos del subconjunto filtrado
-  const candidatos = filtrados
-    .map(r => ({
-      text: (r.text || '').toString().trim().replace(/\s+/g, ' '),
-      likes: parseInt(r.likeCount, 10) || 0,
-      publishedAt: (r.publishedAt || '').toString().trim()
-    }))
-    .filter(c => c.text.length >= 15 && c.text.length <= 150);
-
-  candidatos.sort((a, b) => b.likes - a.likes);
-
-  const vistos = new Set();
-  const ejemplos = [];
-  for(const c of candidatos){
-    const clave = stripAccents(c.text).slice(0, 40);
-    if(vistos.has(clave)) continue;
-    vistos.add(clave);
-    ejemplos.push(c);
-    if(ejemplos.length >= 4) break;
+  if(topCarino){
+    const lineaPalabra = topPalabraCarino
+      ? ` Entre las palabras, la más repetida es <strong>"${topPalabraCarino.label}"</strong>, con
+      <strong>${topPalabraCarino.count.toLocaleString('es-AR')}</strong> apariciones —muy por encima de cualquier mención neutra
+      del animal.`
+      : '';
+    document.getElementById('insightCarino').innerHTML =
+      `Al cruzar el léxico anterior con un segundo diccionario de expresiones de cariño (palabras como "amor", "hermoso",
+      "precioso", "adorable", "consentido" o "tesoro", además de emojis afectivos), el <strong>${pctCarino}%</strong> de los
+      comentarios scrapeados incluye al menos una de estas marcas de afecto explícito. La expresión más repetida en general es
+      <strong>"${topCarino.label}"</strong>, con <strong>${topCarino.count.toLocaleString('es-AR')}</strong> apariciones.${lineaPalabra}
+      Este rasgo discursivo refuerza la idea de que buena parte de la audiencia usa el comentario como un espacio de consumo
+      afectivo y validación emocional hacia la mascota, más cercano al que se usa para hablar de un hijo que de un animal
+      de compañía.`;
   }
 
-  document.getElementById('quoteExamples').innerHTML = ejemplos.map(e => `
-    <div class="quote-card">
-      <p class="qtext">${e.text}</p>
-      <div class="qmeta">
-        <span>${e.publishedAt || 'Comentario de YouTube'}</span>
-        <span>${e.likes} ❤</span>
-      </div>
-    </div>
-  `).join('');
+  new Chart(document.getElementById('chartCarino'), {
+    type: 'bar',
+    data: {
+      labels: carino.combined.map(c => c.label),
+      datasets: [{
+        label: 'Apariciones',
+        data: carino.combined.map(c => c.count),
+        backgroundColor: carino.combined.map(c => c.type === 'word' ? '#B85C6B' : '#2C6E68'),
+        borderRadius: 4
+      }]
+    },
+    options: baseChartOptions({
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, ticks: { font:{family:'Inter'}, color:'#55605B' }, grid: { color:'#D8D9D0' } },
+        y: { ticks: { font:{family:'Inter'}, color:'#1D2521' }, grid: { display:false } }
+      }
+    })
+  });
 
   const porAnio = {};
   nacimientos.forEach(r => {
