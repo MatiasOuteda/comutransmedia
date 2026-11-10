@@ -243,4 +243,725 @@
   .chart-grid{
     margin-top:1.4rem;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));  
+    grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));
+    gap:1.25rem;
+  }
+  .chart-grid.single{ grid-template-columns:1fr; }
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:1.4rem 1.5rem 1.1rem;
+  }
+  .panel h3{ font-size:1.05rem; font-weight:600; }
+  .panel .sub{ color:var(--ink-soft); font-size:0.88rem; margin-top:0.2rem; }
+  .panel .chart-source{ 
+    color:var(--ink-soft); 
+    font-size:0.78rem; 
+    margin-top:0.6rem; 
+    font-style:italic; 
+    border-top:1px solid #ECEEEA; 
+    padding-top:0.4rem; 
+  }
+  .chart-wrap{ position:relative; height:290px; width:100%; margin-top:0.8rem; }
+  .chart-wrap.tall{ height:330px; }
+
+  .international-box{
+    margin-top:1.25rem;
+    background:#F4F5F0;
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+    padding:1.2rem 1.4rem;
+  }
+  .international-box h4{ margin:0 0 0.4rem; font-size:0.95rem; color:var(--teal); font-weight:600; }
+  .international-box p{ margin:0; font-size:0.9rem; color:var(--ink-soft); }
+  .stat-triad{ display:flex; gap:1.5rem; margin-top:0.8rem; flex-wrap:wrap; }
+  .stat-item{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:0.6rem 1rem;
+    border-radius:8px;
+    flex:1 1 120px;
+  }
+  .stat-item .val{ font-size:1.3rem; font-family:'Fraunces', serif; font-weight:600; color:var(--rose); }
+  .stat-item .tag{ font-size:0.8rem; color:var(--ink-soft); }
+
+  .quali-layout {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .highlight-card {
+    background: var(--rose-soft);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(184, 92, 107, 0.3);
+    max-width: 450px;
+    width: 100%;
+  }
+  .highlight-card .big-num { font-family: 'Fraunces', serif; font-size: 6rem; color: #7A3542; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+  .highlight-card .big-txt { font-size: 1.25rem; color: #7A3542; font-weight: 600; margin-top: 0.5rem; line-height: 1.2; }
+  .highlight-card .big-sub { font-size: 1rem; margin-top: 1.5rem; color: #7A3542; opacity: 0.85; line-height: 1.4; }
+
+  .quote-examples{
+    margin-top:1.8rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:1rem;
+  }
+  .quote-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:1.1rem 1.25rem;
+    position:relative;
+  }
+  .quote-card::before{
+    content:'“';
+    font-family:'Fraunces', serif;
+    font-size:2.4rem;
+    color:var(--rose-soft);
+    position:absolute;
+    top:0.1rem;
+    left:0.6rem;
+    line-height:1;
+  }
+  .quote-card p.qtext{
+    margin:0.6rem 0 0.8rem;
+    padding-left:0.6rem;
+    font-size:0.95rem;
+    color:var(--ink);
+    font-style:italic;
+    line-height:1.45;
+  }
+  .quote-card .qmeta{
+    padding-left:0.6rem;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+  }
+
+  .compare-grid{
+    margin-top:1.4rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:1.25rem;
+  }
+  .compare-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:1.5rem;
+  }
+  .compare-card h3{ font-size:1.15rem; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem; }
+  .compare-card.mascota h3{ color:var(--teal); }
+  .compare-card.hijos h3{ color:var(--rose); }
+  .compare-card ul{ list-style:none; padding:0; margin:0; }
+  .compare-card li{ padding:0.6rem 0; border-bottom:1px solid var(--line); font-size:0.92rem; color:var(--ink-soft); }
+  .compare-card li:last-child{ border-bottom:none; }
+  .compare-card li strong{ color:var(--ink); }
+
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.4rem;
+  }
+  .source-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .source-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+  .source-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+  }
+  .badge-casual { background: #E2ECE9; color: var(--teal); }
+  .badge-clasico { background: #F6E7E9; color: var(--rose); }
+  .badge-experto { background: #FBF0DA; color: #8A6419; }
+  .badge-hardcore { background: #EAECEB; color: var(--ink-soft); }
+  .source-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.45rem;
+    color: var(--ink);
+  }
+  .source-card p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    margin: 0 0 1rem;
+  }
+  .source-link {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .cta-adopcion {
+    text-align: center;
+    margin: 5rem auto 2rem;
+    padding: 3rem 2rem;
+    background: #F4F5F0;
+    border: 1px dashed var(--teal);
+    border-radius: var(--radius);
+    max-width: 700px;
+  }
+  .cta-adopcion h3 { 
+    color: var(--teal); 
+    margin-bottom: 0.75rem; 
+    font-size: 1.6rem; 
+  }
+  .cta-adopcion p { 
+    color: var(--ink-soft); 
+    margin-bottom: 2.5rem; 
+    font-size: 1.1rem; 
+  }
+  .btn-wpp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: white;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 12px 20px rgba(37, 211, 102, 0.25);
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-wpp:hover { background: #1EBE57; color: white; text-decoration: none; }
+  .btn-wpp:active { transform: scale(0.95); animation: none; }
+
+  footer.note{
+    margin-top:4.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);
+    font-size:0.85rem;
+    max-width:68ch;
+  }
+</style>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Cargando encuesta, comentarios y estadísticas de natalidad desde la planilla…</p>
+  </div>
+
+  <div id="error" hidden>
+    <h2>No se pudieron cargar los datos</h2>
+    <p id="errorMsg">Revisá que la planilla de Google Sheets esté publicada en la web y accesible.</p>
+    <button id="retryBtn">Reintentar</button>
+  </div>
+
+  <div id="dashboard" hidden>
+
+    <header class="hero">
+      <div class="kicker">Vínculo humano–mascota · Demografía y afectos en Argentina</div>
+      <h1 class="title">¿Sobrepoblación de mascotas y <em>caída demográfica</em>?</h1>
+      <p class="bajada">
+        ¿Avanzamos hacia un escenario donde los animales de compañía sustituyen la descendencia humana?
+        Cruzamos una encuesta local (AMBA) sobre el rol afectivo de las mascotas, comentarios en videos masivos de YouTube y estadísticas oficiales
+        de natalidad en Argentina para explorar si el lazo humano-animal compite, complementa o reemplaza la paternidad en tiempos
+        de ajuste económico y búsqueda de autonomía personal.
+      </p>
+
+      <div class="intro-index">
+        <div class="intro-item">
+          <span class="num">Pregunta 1</span>
+          <h4>¿Reemplaza o complementa?</h4>
+          <p>Qué dicen los encuestados del AMBA cuando se les pregunta si su vínculo animal ocupa el lugar de un vínculo humano.</p>
+        </div>
+        <div class="intro-item">
+          <span class="num">Pregunta 2</span>
+          <h4>El discurso espontáneo</h4>
+          <p>Cómo habla la audiencia de sus mascotas en comentarios de YouTube: análisis de expresiones de parentesco y afecto filial.</p>
+        </div>
+        <div class="intro-item">
+          <span class="num">Pregunta 3</span>
+          <h4>El cruce con la natalidad</h4>
+          <p>La curva oficial de nacimientos en Argentina (2012–2024) leída en paralelo con la tenencia de mascotas como refugio afectivo.</p>
+        </div>
+      </div>
+
+      <div id="kpiStrip"></div>
+    </header>
+
+    <section class="block">
+      <span class="q">Pregunta 1</span>
+      <h2>¿Puede el vínculo con una mascota reemplazar el vínculo con un humano?</h2>
+      <p class="insight" id="insight1"></p>
+      <div class="chart-grid">
+        <div class="panel">
+          <h3>"¿Creés que una mascota puede ocupar el lugar emocional de un vínculo humano o familiar?"</h3>
+          <div class="sub">Percepción general de los encuestados que conviven con animales</div>
+          <div class="chart-wrap"><canvas id="chartCrees"></canvas></div>
+          <div class="chart-source"><strong>Fuente:</strong> Encuesta cuantitativa propia (AMBA, Argentina · Modo Clásico).</div>
+        </div>
+        <div class="panel">
+          <h3>"¿Tu mascota reemplaza o complementa tus vínculos con otras personas?"</h3>
+          <div class="sub">Autopercepción del vínculo personal de cada informante</div>
+          <div class="chart-wrap"><canvas id="chartReemplaza"></canvas></div>
+          <div class="chart-source"><strong>Fuente:</strong> Encuesta cuantitativa propia (AMBA, Argentina · Modo Clásico).</div>
+        </div>
+      </div>
+
+      <div class="international-box">
+        <h4>El cambio de paradigma cultural (Perspectiva comparada: HumanePro / EE.UU.)</h4>
+        <p>A nivel internacional, los relevamientos de la organización estadounidense Humane World for Animals demuestran que el animal doméstico dejó de ser percibido como un bien transaccional y pasó al orden del parentesco:</p>
+        <div class="stat-triad">
+          <div class="stat-item">
+            <div class="val">Mayoría</div>
+            <div class="tag">Considerados miembro de la familia</div>
+          </div>
+          <div class="stat-item">
+            <div class="val">Creciente</div>
+            <div class="tag">Considerados compañeros de vida</div>
+          </div>
+          <div class="stat-item">
+            <div class="val">Residual</div>
+            <div class="tag">Considerados mera "propiedad"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <span class="q">Pregunta 2</span>
+      <h2>¿Cómo relatan las audiencias su vínculo diario con las mascotas?</h2>
+
+      <p class="method-note">
+        <strong>Cómo se construyó esta muestra (Modo Hardcore):</strong> se hicieron dos scrapings sucesivos con YouTube Data Tools.
+        El primero relevó 100 videos con la palabra "mascota" en el título, ordenados por mayor número de visualizaciones,
+        para acotar el universo a los contenidos de mayor alcance. El segundo scrapeó más de 220.000 comentarios de esos mismos videos,
+        conservando el <em>videoId</em> de origen, texto, likes y fecha de publicación. Sobre ese corpus se aplicó un
+        filtrado léxico por palabras clave para aislar aquellos que expresan a la mascota en clave de vínculo filial (hijo/a, hermano/a o "bebé").
+      </p>
+
+      <p class="insight">
+        Al analizar cualitativamente ese subconjunto filtrado, se observa un bloque contundente de interacciones que codifican
+        un nivel extremo de afecto. La audiencia utiliza expresiones coloquiales y avanza explícitamente hacia un léxico de
+        asimilación parental. El animal ocupa un lugar de altísima jerarquía emocional, integrado directamente como núcleo familiar.
+      </p>
+      
+      <div class="quali-layout" id="qualiLayout"></div>
+      <div class="quote-examples" id="quoteExamples"></div>
+      
+    </section>
+
+    <section class="block">
+      <span class="q">Pregunta 3</span>
+      <h2>¿Estos elementos pueden ser causa de la baja natalidad en Argentina?</h2>
+      <p class="insight" id="insight3"></p>
+      <div class="chart-grid single">
+        <div class="panel">
+          <h3>Nacimientos totales registrados por año en Argentina</h3>
+          <div class="sub">Consolidado nacional anual por grupo etario de la madre (2012–2024)</div>
+          <div class="chart-wrap tall"><canvas id="chartNacimientos"></canvas></div>
+          <div class="chart-source"><strong>Fuente:</strong> Dataset oficial del Ministerio del Interior del Gobierno Nacional Argentino (Modo Experto).</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <span class="q">Discusión cualitativa</span>
+      <h2>Crianza vs. Tenencia: La ecuación entre economía y autonomía</h2>
+      <p class="insight">
+        Más allá de la afinidad afectiva, existen factores materiales que explican por qué la tenencia de animales crece mientras la maternidad y paternidad se posponen o descartan:
+      </p>
+      <div class="compare-grid">
+        <div class="compare-card mascota">
+          <h3>Vínculo con Mascota</h3>
+          <ul>
+            <li><strong>Costo económico:</strong> Inversión mensual acotada (alimentación y sanidad preventiva).</li>
+            <li><strong>Autonomía y tiempo:</strong> Permite mantener rutinas laborales flexibles y proyectos individuales.</li>
+            <li><strong>Compromiso:</strong> Cuidado de menor dependencia sin requerir reconfiguración de la carrera profesional.</li>
+          </ul>
+        </div>
+        <div class="compare-card hijos">
+          <h3>Crianza de Hijos</h3>
+          <ul>
+            <li><strong>Costo económico:</strong> Alta demanda presupuestaria sostenida (salud, educación, vivienda, vestimenta).</li>
+            <li><strong>Autonomía y tiempo:</strong> Demanda absoluta y pérdida de libertad personal inmediata, especialmente en los primeros años.</li>
+            <li><strong>Compromiso:</strong> Responsabilidad legal y social a largo plazo que condiciona el estilo de vida familiar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <span class="q">Fundamentación metodológica</span>
+      <h2>Fuentes de datos y corpus de investigación</h2>
+      <p class="insight">
+        El proyecto articula cuatro modos metodológicos complementarios para evitar sesgos y separar nítidamente los datos internacionales de los locales:
+      </p>
+
+      <div class="sources-grid">
+        <div class="source-card">
+          <div>
+            <div class="source-header">
+              <span class="source-badge badge-casual">Modo Casual</span>
+            </div>
+            <h4>Humane World for Animals (HumanePro · EE.UU.)</h4>
+            <p>
+              Estudio <em>"Pets by the Numbers"</em> sobre la tenencia de mascotas en Estados Unidos. Releva la adquisición de animales domésticos, adopción, la proporción de hogares que los consideran familia frente a bienes de propiedad y la brecha de costos frente a la crianza humana.
+            </p>
+          </div>
+          <a href="https://humanepro.org/page/pets-by-the-numbers" target="_blank" rel="noopener noreferrer" class="source-link">
+            Ver informe oficial HumanePro ↗
+          </a>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <div class="source-header">
+              <span class="source-badge badge-clasico">Modo Clásico</span>
+            </div>
+            <h4>Encuesta propia cuantitativa (AMBA, Argentina)</h4>
+            <p>
+              Relevamiento estructurado autoadministrado a personas con animales de compañía en la Ciudad de Buenos Aires y Gran Buenos Aires. Analiza la jerarquía afectiva, la inclusión en el núcleo familiar y si el lazo opera en la experiencia personal como reemplazo o complemento vincular.
+            </p>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1kmb-YUAZElblMQKkbVhM1RMW5psakBT4eZ_SSIkyAcQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="source-link">
+            Ver planilla de respuestas ↗
+          </a>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <div class="source-header">
+              <span class="source-badge badge-experto">Modo Experto</span>
+            </div>
+            <h4>Ministerio del Interior / Gobierno de Argentina</h4>
+            <p>
+              Dataset público <em>"cantidad_de_nacimientos_edad_madre_por_anio_de_nacimiento_2012_2024"</em>. Consolida la frecuencia anual de nacimientos registrados en Argentina desglosada por provincia y grupos de edad materna a lo largo del período 2012–2024.
+            </p>
+          </div>
+          <a href="https://datos.gob.ar" target="_blank" rel="noopener noreferrer" class="source-link">
+            Portal de Datos Abiertos de Argentina ↗
+          </a>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <div class="source-header">
+              <span class="source-badge badge-hardcore">Modo Hardcore</span>
+            </div>
+            <h4>Scraping en YouTube (YouTube Data Tools)</h4>
+            <p>
+              Minería de texto sobre los 100 videos de mayor alcance con el término "mascota". Relevó más de 220.000 comentarios con métricas de interacción (likes, fecha de publicación) y filtrado léxico orientado a identificar términos de asimilación filial (hijo/a, familia, bebé).
+            </p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1KbIC8DGrYAQm8Iz0IIxkBx_g_2YrKVXf?usp=drive_link" target="_blank" rel="noopener noreferrer" class="source-link">
+            Ver archivos CSV del scraping ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-adopcion">
+      <h3>¿Tenés lugar en tu familia?</h3>
+      <p>Transformá el dato estadístico en acción directa. Comunicate con la organización <strong>Adopciones Quilmes</strong> y cambiale la vida a un animal rescatado.</p>
+      
+      <a href="https://wa.me/5491169233782?text=Hola%20me%20interesa%20adoptar!" target="_blank" class="btn-wpp">
+        ¡Adoptar por WhatsApp!
+      </a>
+    </div>
+
+    <footer class="note">
+      Nota metodológica: Encuesta propia estructurada en AMBA, minería de comentarios en YouTube mediante YouTube Data Tools, serie histórica de nacimientos del Ministerio del Interior de la Nación Argentina (2012–2024) y datos comparados del estudio "Pets by the Numbers" de HumanePro (Humane World for Animals, EE.UU.). Los indicadores permiten mapear una transformación contemporánea en las prioridades afectivas y socioeconómicas sin presuponer causalidades mecánicas lineales.
+    </footer>
+
+  </div>
+
+<script>
+const PUB_BASE_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2kbq08VCm15a0HyqWofnxXYwAaIfES2jXme7RTYyczoHVyodmSrJWNXTnP1uY-coF4c0NS9zH30T_/pub';
+
+const GID = {
+  encuesta: '1369376445',
+  nacimientos: '1691452967',
+  comentarios: '2085427083',
+  comentariosFiltrados: '1158173373'
+};
+
+const csvUrl = gid => `${PUB_BASE_URL}?gid=${gid}&single=true&output=csv`;
+
+const COLORS = ['#B85C6B', '#2C6E68', '#D9A441', '#7D8C87', '#8A5A73', '#5C8F87'];
+
+function stripAccents(s){
+  return (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function parseCsv(text){
+  return Papa.parse(text, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: h => h.replace(/\s+/g, ' ').trim()
+  }).data;
+}
+
+async function fetchSheet(gid){
+  const res = await fetch(csvUrl(gid));
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  const text = await res.text();
+  return parseCsv(text);
+}
+
+function tally(rows, key){
+  const map = {};
+  rows.forEach(r => {
+    const v = (r[key] || '').toString().trim();
+    if(!v) return;
+    map[v] = (map[v] || 0) + 1;
+  });
+  return map;
+}
+
+function sumValues(obj){ return Object.values(obj).reduce((a,b) => a+b, 0); }
+function pct(part, total){ return total ? Math.round((part/total)*100) : 0; }
+
+function baseChartOptions(extra){
+  return Object.assign({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { font: { family: 'Inter' }, color: '#1D2521' } },
+      tooltip: { titleFont: { family:'Inter' }, bodyFont: { family:'Inter' } }
+    }
+  }, extra);
+}
+
+async function init(){
+  document.getElementById('loading').hidden = false;
+  document.getElementById('error').hidden = true;
+  document.getElementById('dashboard').hidden = true;
+
+  try{
+    const [encuesta, nacimientos, comentarios, comentariosFiltrados] = await Promise.all([
+      fetchSheet(GID.encuesta),
+      fetchSheet(GID.nacimientos),
+      fetchSheet(GID.comentarios),
+      fetchSheet(GID.comentariosFiltrados)
+    ]);
+
+    document.getElementById('loading').hidden = true;
+    document.getElementById('error').hidden = true;
+    document.getElementById('dashboard').hidden = false;
+
+    render(encuesta, nacimientos, comentarios, comentariosFiltrados);
+
+  }catch(err){
+    console.error(err);
+    document.getElementById('loading').hidden = true;
+    document.getElementById('dashboard').hidden = true;
+    document.getElementById('error').hidden = false;
+  }
+}
+
+function render(encuesta, nacimientos, comentarios, comentariosFiltrados){
+  const K_TIENE_MASCOTA = '¿Tenés alguna mascota?';
+  const K_CREES = '¿Creés que una mascota puede ocupar el lugar emocional de un vínculo humano o familiar?';
+  const K_REEMPLAZA = 'En tu caso personal, ¿sentís que tu mascota reemplaza o complementa tus vínculos con otras personas?';
+
+  const totalEncuestados = encuesta.length;
+  const tieneMascotaCount = encuesta.filter(r => stripAccents(r[K_TIENE_MASCOTA] || '').startsWith('si')).length;
+  const pctConMascota = pct(tieneMascotaCount, totalEncuestados);
+
+  const creesCounts = tally(encuesta, K_CREES);
+  const creesTotal = sumValues(creesCounts);
+  const creesSiCount = Object.entries(creesCounts).find(([k]) => stripAccents(k).startsWith('si'));
+  const pctCreesSi = pct(creesSiCount ? creesSiCount[1] : 0, creesTotal);
+
+  const reemplazaCounts = tally(encuesta, K_REEMPLAZA);
+  const reemplazaTotal = sumValues(reemplazaCounts);
+  const complementaEntry = Object.entries(reemplazaCounts).find(([k]) => stripAccents(k).includes('complementa'));
+  const pctComplementa = pct(complementaEntry ? complementaEntry[1] : 0, reemplazaTotal);
+
+  const totalComentarios = comentarios.filter(r => (r.text || '').toString().trim().length > 0).length;
+  const filtrados = comentariosFiltrados.filter(r => (r.text || '').toString().trim().length > 0);
+  const totalFiltrados = filtrados.length;
+  const pctFiltrados = pct(totalFiltrados, totalComentarios);
+
+  document.getElementById('qualiLayout').innerHTML = `
+    <div class="highlight-card">
+      <div class="big-num">${pctFiltrados}%</div>
+      <div class="big-txt">de los comentarios analizados</div>
+      <div class="big-sub">
+        Equivale a <strong>${totalFiltrados.toLocaleString('es-AR')}</strong> comentarios que enmarcan explícitamente a la mascota
+        como vínculo filial, sobre un total de <strong>${totalComentarios.toLocaleString('es-AR')}</strong> comentarios relevados
+        en 100 videos de mascotas de YouTube.
+      </div>
+    </div>
+  `;
+
+  const candidatos = filtrados
+    .map(r => ({
+      text: (r.text || '').toString().trim().replace(/\s+/g, ' '),
+      likes: parseInt(r.likeCount, 10) || 0,
+      publishedAt: (r.publishedAt || '').toString().trim()
+    }))
+    .filter(c => c.text.length >= 15 && c.text.length <= 150);
+
+  candidatos.sort((a, b) => b.likes - a.likes);
+
+  const vistos = new Set();
+  const ejemplos = [];
+  for(const c of candidatos){
+    const clave = stripAccents(c.text).slice(0, 40);
+    if(vistos.has(clave)) continue;
+    vistos.add(clave);
+    ejemplos.push(c);
+    if(ejemplos.length >= 4) break;
+  }
+
+  document.getElementById('quoteExamples').innerHTML = ejemplos.map(e => `
+    <div class="quote-card">
+      <p class="qtext">${e.text}</p>
+      <div class="qmeta">
+        <span>${e.publishedAt || 'Comentario de YouTube'}</span>
+        <span>${e.likes} ❤</span>
+      </div>
+    </div>
+  `).join('');
+
+  const porAnio = {};
+  nacimientos.forEach(r => {
+    const anio = parseInt(r.anio, 10);
+    const cantidad = parseInt(r.cantidad, 10);
+    if(isNaN(anio) || isNaN(cantidad)) return;
+    porAnio[anio] = (porAnio[anio] || 0) + cantidad;
+  });
+  const anios = Object.keys(porAnio).map(Number).sort((a,b) => a-b);
+  const valores = anios.map(a => porAnio[a]);
+  const firstYear = anios[0], lastYear = anios[anios.length - 1];
+  const firstVal = valores[0], lastVal = valores[valores.length - 1];
+  const variacion = firstVal ? Math.round(((lastVal - firstVal) / firstVal) * 100) : 0;
+
+  const kpiStrip = document.getElementById('kpiStrip');
+  kpiStrip.className = 'methodology-wrapper';
+  kpiStrip.innerHTML = `
+    <div class="methodology-list">
+      <div class="method-item">
+        <div class="toy-ball ball-1">${totalEncuestados}</div>
+        <div class="method-text">
+          <h3>Encuesta cuantitativa propia</h3>
+          <p>Cuestionario autoadministrado a personas del AMBA para relevar el rol afectivo de las mascotas en el entorno local.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="toy-ball ball-2">${totalComentarios.toLocaleString('es-AR')}</div>
+        <div class="method-text">
+          <h3>Scraping de YouTube</h3>
+          <p>Extracción automatizada de comentarios en 100 videos globales de temática animal para analizar el discurso afectivo en redes.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="toy-ball ball-3">${variacion > 0 ? '+' : ''}${variacion}%</div>
+        <div class="method-text">
+          <h3>Registros del Gobierno Nacional</h3>
+          <p>Evolución de los nacimientos en Argentina (${firstYear} → ${lastYear}). Dato oficial consolidado del Ministerio del Interior.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bone-wrapper">
+      <div class="toy-bone">${pctConMascota}%</div>
+      <h3>Tienen mascota</h3>
+      <p>Proporción de la muestra local (AMBA) que convive con animales, confirmando la adopción masiva en los hogares.</p>
+    </div>
+  `;
+
+  document.getElementById('insight1').innerHTML =
+    `Sobre <strong>${creesTotal}</strong> respuestas de la encuesta local en AMBA, un <strong>${pctCreesSi}%</strong> considera admisible que una mascota
+    llegue a ocupar el lugar emocional de un vínculo humano o familiar. Sin embargo, en el plano personal directo, el
+    <strong>${pctComplementa}%</strong> define el lazo como un <strong>complemento</strong> afectivo y no una sustitución. En sintonía con
+    lo observado a nivel internacional en Estados Unidos (HumanePro), el animal deja de concebirse como un objeto de propiedad y asume estatus de afecto,
+    pero convive junto a la red de sociabilidad humana en vez de anularla.`;
+
+  document.getElementById('insight3').innerHTML =
+    `Según los registros del Ministerio del Interior de la Nación, los nacimientos totales descendieron de <strong>${firstVal.toLocaleString('es-AR')}</strong> en
+    ${firstYear} a <strong>${lastVal.toLocaleString('es-AR')}</strong> en ${lastYear}
+    (caída del <strong>${variacion}%</strong> a nivel país). La curva coincide temporalmente con la centralidad de los animales como miembros del hogar.
+    Sin embargo, la demografía responde a condicionantes materiales estructurales: mientras la crianza de un hijo exige una inversión económica prolongada y condiciona la autonomía individual, la mascota ofrece compañía afectiva inmediata con costos y ataduras sustancialmente menores.`;
+
+  new Chart(document.getElementById('chartCrees'), {
+    type: 'doughnut',
+    data: {
+      labels: Object.keys(creesCounts),
+      datasets: [{ data: Object.values(creesCounts), backgroundColor: COLORS, borderColor: '#FBFAF7', borderWidth: 2 }]
+    },
+    options: baseChartOptions({ plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font:{family:'Inter'}, color:'#1D2521' } } } })
+  });
+
+  new Chart(document.getElementById('chartReemplaza'), {
+    type: 'bar',
+    data: {
+      labels: Object.keys(reemplazaCounts),
+      datasets: [{ label: 'Respuestas', data: Object.values(reemplazaCounts), backgroundColor: '#2C6E68', borderRadius: 4 }]
+    },
+    options: baseChartOptions({
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, ticks: { font:{family:'Inter'}, color:'#55605B' }, grid: { color:'#D8D9D0' } },
+        y: { ticks: { font:{family:'Inter'}, color:'#1D2521' }, grid: { display:false } }
+      }
+    })
+  });
+
+  new Chart(document.getElementById('chartNacimientos'), {
+    type: 'line',
+    data: {
+      labels: anios,
+      datasets: [{
+        label: 'Nacimientos totales',
+        data: valores,
+        borderColor: '#B85C6B',
+        backgroundColor: 'rgba(184,92,107,0.12)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 2
+      }]
+    },
+    options: baseChartOptions({
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: false, ticks: { font:{family:'Inter'}, color:'#55605B' }, grid: { color:'#D8D9D0' } },
+        x: { ticks: { font:{family:'Inter'}, color:'#55605B' }, grid: { display:false } }
+      }
+    })
+  });
+}
+
+document.getElementById('retryBtn').addEventListener('click', init);
+init();
+</script>
+</body>
+</html>
