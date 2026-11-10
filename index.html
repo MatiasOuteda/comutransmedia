@@ -90,7 +90,6 @@
     color:var(--ink-soft);
   }
 
-  /* ---------- Índice / introducción estructural ---------- */
   .intro-index{
     margin-top:2.2rem;
     display:grid;
@@ -124,7 +123,6 @@
   }
   .intro-item p{ margin:0; font-size:0.92rem; color:var(--ink-soft); line-height:1.45; }
 
-  /* ---------- Pelotas y Hueso Metodológico ---------- */
   .methodology-wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -177,7 +175,6 @@
   .method-text h3 { margin: 0 0 0.4rem; font-size: 1.25rem; color: var(--ink); }
   .method-text p { margin: 0; font-size: 1rem; color: var(--ink-soft); max-width: 50ch; line-height: 1.5; }
 
-  /* Hueso de Juguete */
   .bone-wrapper {
     display: flex;
     flex-direction: column;
@@ -246,158 +243,4 @@
   .chart-grid{
     margin-top:1.4rem;
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));
-    gap:1.25rem;
-  }
-  .chart-grid.single{ grid-template-columns:1fr; }
-  .panel{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:1.4rem 1.5rem 1.1rem;
-  }
-  .panel h3{ font-size:1.05rem; font-weight:600; }
-  .panel .sub{ color:var(--ink-soft); font-size:0.88rem; margin-top:0.2rem; }
-  .chart-wrap{ position:relative; height:300px; width:100%; margin-top:1rem; }
-  .chart-wrap.tall{ height:340px; }
-
-  .international-box{
-    margin-top:1.25rem;
-    background:#F4F5F0;
-    border:1px dashed var(--line);
-    border-radius:var(--radius);
-    padding:1.2rem 1.4rem;
-  }
-  .international-box h4{ margin:0 0 0.4rem; font-size:0.95rem; color:var(--teal); font-weight:600; }
-  .international-box p{ margin:0; font-size:0.9rem; color:var(--ink-soft); }
-  .stat-triad{ display:flex; gap:1.5rem; margin-top:0.8rem; flex-wrap:wrap; }
-  .stat-item{
-    background:var(--panel);
-    border:1px solid var(--line);
-    padding:0.6rem 1rem;
-    border-radius:8px;
-    flex:1 1 120px;
-  }
-  .stat-item .val{ font-size:1.3rem; font-family:'Fraunces', serif; font-weight:600; color:var(--rose); }
-  .stat-item .tag{ font-size:0.8rem; color:var(--ink-soft); }
-
-  /* Ajuste visual limpio para la tarjeta del porcentaje */
-  .quali-layout {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-  .highlight-card {
-    background: var(--rose-soft);
-    border-radius: var(--radius);
-    padding: 3rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid rgba(184, 92, 107, 0.3);
-    max-width: 450px;
-    width: 100%;
-  }
-  .highlight-card .big-num { font-family: 'Fraunces', serif; font-size: 6rem; color: #7A3542; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
-  .highlight-card .big-txt { font-size: 1.25rem; color: #7A3542; font-weight: 600; margin-top: 0.5rem; line-height: 1.2; }
-  .highlight-card .big-sub { font-size: 1rem; margin-top: 1.5rem; color: #7A3542; opacity: 0.85; line-height: 1.4; }
-
-  /* ---------- Ejemplos textuales (comentarios filtrados) ---------- */
-  .quote-examples{
-    margin-top:1.8rem;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:1rem;
-  }
-  .quote-card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:1.1rem 1.25rem;
-    position:relative;
-  }
-  .quote-card::before{
-    content:'“';
-    font-family:'Fraunces', serif;
-    font-size:2.4rem;
-    color:var(--rose-soft);
-    position:absolute;
-    top:0.1rem;
-    left:0.6rem;
-    line-height:1;
-  }
-  .quote-card p.qtext{
-    margin:0.6rem 0 0.8rem;
-    padding-left:0.6rem;
-    font-size:0.95rem;
-    color:var(--ink);
-    font-style:italic;
-    line-height:1.45;
-  }
-  .quote-card .qmeta{
-    padding-left:0.6rem;
-    font-size:0.78rem;
-    color:var(--ink-soft);
-    display:flex;
-    justify-content:space-between;
-  }
-
-  .compare-grid{
-    margin-top:1.4rem;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-    gap:1.25rem;
-  }
-  .compare-card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:1.5rem;
-  }
-  .compare-card h3{ font-size:1.15rem; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem; }
-  .compare-card.mascota h3{ color:var(--teal); }
-  .compare-card.hijos h3{ color:var(--rose); }
-  .compare-card ul{ list-style:none; padding:0; margin:0; }
-  .compare-card li{ padding:0.6rem 0; border-bottom:1px solid var(--line); font-size:0.92rem; color:var(--ink-soft); }
-  .compare-card li:last-child{ border-bottom:none; }
-  .compare-card li strong{ color:var(--ink); }
-
-  /* ---------- Fuentes de Datos y Metodología (NUEVA SECCIÓN) ---------- */
-  .sources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
-    margin-top: 1.4rem;
-  }
-  .source-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 1.35rem 1.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .source-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.6rem;
-  }
-  .source-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.55rem;
-    border-radius: 6px;
-  }
-  .badge-casual { background: #E2ECE9; color: var(--teal); }
-  .badge-clasico { background: #F6E7E9; color: var(--rose); }
-  .badge-experto { background: #FBF0DA; color: #8A6419; }
-  .badge-hardcore { background: #EAECEB; color: var(--ink-soft); }
-  .source-card h4 {
-    font-size: 1.05rem;
-    margin-bottom:
+    grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));  
